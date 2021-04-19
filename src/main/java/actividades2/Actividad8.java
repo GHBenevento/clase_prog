@@ -6,7 +6,7 @@ public class Actividad8 {
     public static void main(String[] args) {
         int numb;
         do {
-            System.out.println("Esbribe un numero mayor que 0.");
+            System.out.println("Esbribe un numero mayor o igual que 0.");
             Scanner sc = new Scanner(System.in);
             numb = sc.nextInt();
         } while (numb < 0);

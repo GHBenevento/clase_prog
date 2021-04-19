@@ -13,6 +13,6 @@ public class Actividad7 {
             float price = sc.nextFloat();
             cont = cont + price;
         }
-        System.out.println("El prcio total es " + cont);
+        System.out.println("El precio total es " + cont);
     }
 }
