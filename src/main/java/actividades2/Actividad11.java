@@ -2,19 +2,14 @@ package actividades2;
 
 import java.util.Scanner;
 
-import static java.lang.Float.parseFloat;
-import static java.lang.Integer.parseInt;
-
 public class Actividad11 {
     public static void main(String[] args) {
         System.out.println("Escribe dos numeros.");
         Scanner sc = new Scanner(System.in);
-        String num1 = sc.nextLine();
-        float numb1 = parseFloat(num1);
-        String num2 = sc.nextLine();
-        float numb2 = parseFloat(num2);
+        float num1 = sc.nextFloat();
+        float num2 = sc.nextFloat();
         for (int i = 0; i < 11; i++) {
-                System.out.println(Math.random()*(numb1-numb2)+numb2);
+            System.out.println(Math.random() * (num1 - num2) + num2);
         }
     }
 }
