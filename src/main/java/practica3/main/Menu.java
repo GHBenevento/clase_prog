@@ -52,10 +52,10 @@ public class Menu {
     //Metodos estaticos
 
     static void menu() { //imprime el menu al usuario y espera una respuesta
-        System.out.println("***********************************");
+        System.out.println("**************************************");
         System.out.println("Press 1 to withdraw money ");
-        System.out.println("Press anything else to exit the ATM");
-        System.out.println("***********************************");
+        System.out.println("Press any other number to exit the ATM");
+        System.out.println("**************************************");
         op = sc.nextInt();
         sc.nextLine();
     }
