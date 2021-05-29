@@ -1,4 +1,4 @@
-package practica3;
+package practica3.clases;
 
 public abstract class Card {
     private String NIF;
@@ -13,16 +13,15 @@ public abstract class Card {
     public Card() {
     }
 
-    public Card(String NIF, Integer PIN, String name, String surname, String type) {
+    public Card(String NIF, Integer PIN, String name, String surname) {
         this.NIF = NIF;
         this.PIN = PIN;
         this.name = name;
         this.surname = surname;
         this.isActive = true;
-        this.type = type;
     }
 
-    public Card(Card copyCard){
+    public Card(Card copyCard) {
         setNIF(copyCard.getNIF());
         setPIN(copyCard.getPIN());
         setName(copyCard.getName());

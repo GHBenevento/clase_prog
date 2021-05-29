@@ -1,4 +1,4 @@
-package practica3;
+package practica3.clases;
 
 import java.util.ArrayList;
 
@@ -67,13 +67,10 @@ public class ATM {
         System.out.println("==============================");
         System.out.println("|      - ATM  BALANCE -      |");
         System.out.println("==============================");
-        System.out.println("There is " + bills[0][1] + " 500 € bills");
-        System.out.println("There is " + bills[1][1] + " 200 € bills");
-        System.out.println("There is " + bills[2][1] + " 100 € bills");
-        System.out.println("There is " + bills[3][1] + " 50 € bills");
-        System.out.println("There is " + bills[4][1] + " 20 € bills");
-        System.out.println("There is " + bills[5][1] + " 10 € bills");
-        System.out.println("There is " + bills[6][1] + " 5 € bills");
+
+        for (int i = 0; i < bills.length; i++) {
+            System.out.println("There's " + bills[i][1] + " " + bills[i][0]+ " € bills");
+        }
         System.out.println("------------------------------");
         System.out.println("A total balance of " + this.checkATMBalance() + " €");
         System.out.println("==============================");
@@ -81,6 +78,7 @@ public class ATM {
 
     public Integer checkATMBalance() { //Devuelve el valor exacto de dinero que queda en el cajero
         int balance = 0;
+
         for (int i = 0; i < this.getBills().length; i++) {
             balance += this.getBills()[i][1] * this.getBills()[i][0];
         }
@@ -89,12 +87,16 @@ public class ATM {
 
     public boolean authentication(String NIF, Integer PIN) { //Comprueba si el NIF y el PIN son correctos
         boolean authentication = false, unknownNIF = true;
+
         for (int i = 0; i < this.getCards().size(); i++) {
             Card ourCard = this.getCards().get(i);
+
             if (ourCard.getNIF().equals(NIF)) {
                 unknownNIF = false;
+
                 if (ourCard.getPIN().equals(PIN)) {
                     authentication = true;
+
                 } else {
                     System.out.println(" ");
                     System.out.println("Incorrect PIN for NIF: " + NIF);
@@ -112,9 +114,13 @@ public class ATM {
         int cont = 0;
         int[][] bills = this.getBills();
         int[][] taken = new int[][]{{500, 0}, {200, 0}, {100, 0}, {50, 0}, {20, 0}, {10, 0}, {5, 0}};
+
         for (int i = 0; i < bills.length; i++) {
+
             for (int j = 0; j < bills[i][1]; j++) {
+
                 if (amount > 0 && bills[i][0] <= amount) {
+
                     if (bills[i][1] > 0) {
                         amount = amount - bills[i][0];
                         taken[i][1] += 1;

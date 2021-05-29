@@ -1,4 +1,4 @@
-package practica3;
+package practica3.clases;
 
 public class DebitCard extends Card {
     private Integer availableBalance;
@@ -10,22 +10,13 @@ public class DebitCard extends Card {
     }
 
     public DebitCard(String NIF, Integer PIN, String name, String surname, Integer availableBalance) {
-        setNIF(NIF);
-        setPIN(PIN);
-        setName(name);
-        setSurname(surname);
-        setActive(true);
+        super(NIF, PIN, name, surname);
         this.availableBalance = availableBalance;
         setType("DEBIT");
     }
 
     public DebitCard(DebitCard copyCard) {
-        setNIF(copyCard.getNIF());
-        setPIN(copyCard.getPIN());
-        setName(copyCard.getName());
-        setSurname(copyCard.getSurname());
-        setActive(copyCard.isActive());
-        setType(copyCard.getType());
+        super(copyCard);
         this.availableBalance = copyCard.availableBalance;
     }
 

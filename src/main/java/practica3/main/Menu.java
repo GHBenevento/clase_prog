@@ -1,4 +1,9 @@
-package practica3;
+package practica3.main;
+
+import practica3.clases.ATM;
+import practica3.clases.Card;
+import practica3.clases.CreditCard;
+import practica3.clases.DebitCard;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -17,8 +22,6 @@ public class Menu {
     //Metodo main
 
     public static void main(String[] args) {
-
-        //inicializacion de los datos
 
         cards = new ArrayList<>();
         cred = new CreditCard("X3017271Q", 1234, "Georgie", "Benevento", 40, 100);
@@ -83,6 +86,7 @@ public class Menu {
                             if (deb.getAvailableBalance() > amount) {
                                 atm.takeMoney(amount);
                                 deb.setAvailableBalance(deb.getAvailableBalance() - amount);
+
                                 System.out.println("==========================");
                                 System.out.println("** UPDATED:  DEBIT CARD **");
                                 deb.showCard();
@@ -91,11 +95,11 @@ public class Menu {
                                 myATM.showATMBalance();
                             } else {
                                 System.out.println(" ");
-                                System.out.println("\"I'm sorry, that's more than your balance.");
+                                System.out.println("I'm sorry, that's more than your balance.");
                             }
                         } else {
 
-                            if (cred.totalAvailable()> amount) {
+                            if (cred.totalAvailable() > amount) {
                                 atm.takeMoney(amount);
 
                                 if (cred.getAvailableBalance() < amount) {
@@ -127,7 +131,7 @@ public class Menu {
 
         }
         System.out.println(" ");
-        System.out.println("*** Returning to menu ***");
+        System.out.println("*** Returning to main menu ***");
         System.out.println(" ");
     }
 }
